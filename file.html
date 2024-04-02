@@ -6,11 +6,52 @@
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 		<link href="assets/styles.css" rel="stylesheet">
 		<style>
+:root {
+	--plaatje: yellow;
+}
+			
 			/* Schrijf hier gewoon je CSS voor dit component */
+			input[type=file]{
+				width: 1000px;
+				height: 600px;
+				border-radius: 10px;
+				inset: 0;
+				
+				
+				
+			 /* or use: contain */
+}
+
+label{
+	width: 1000px;
+	height: 600px;
+}
+
+div{
+	width: 100%;
+	height: 800px;
+	background: var(--plaatje);
+}
+
 
 			/* Hint: Denk niet te ingewikkeld */
+
 		</style>
 		<script type="module">
+
+const inputElement = document.querySelector("input");
+const foto = document.querySelector("div");
+inputElement.addEventListener("change", function(event) {
+  const fileUrl = event.target.files[0];
+    const mooi = window.URL.createObjectURL(fileUrl); 
+	foto.style.setProperty ('--plaatje', `url('${mooi}')`)
+});
+
+
+
+
+			
+
 			/* Schrijf hier eventueel je client-side JavaScript */
 			
 			/* Hint: Met een paar regels kom je al een heel eind */
@@ -23,12 +64,16 @@
 
 		<!-- Voor het uploaden van een bestand heb je altijd een formulier nodig.
 			 Dus die krijg je alvast. Maak je over de server niet druk; het gaat om de UI. -->
-		<form method="post">
+		<form method="post">	
+			<label>
 
+				<input type="file" name="image"/>
+				
+				
+				Uploaden</label>
+				<div></div>
 			<!-- Hint: Denk niet te ingewikkeld -->
-
-			<button type="submit" class="fdnd-button">Uploaden</button>
-
+			<input type="submit" id="up" name="up">Uploaden</input>
 		</form>
 
 		<details open>
