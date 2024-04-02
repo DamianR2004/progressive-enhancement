@@ -60,7 +60,7 @@
 	svg{
 		margin-left: 15em;
 		top: 0;
-		
+
 	}
 		
 		/* Hint: kijk eens naar :target */
@@ -71,12 +71,13 @@ let closingbutton = document.querySelector('svg')
 let menu = document.querySelector('nav')
 let openbutton = document.querySelector('button')
 
-// dit zorgt ervoor dat er een mouseleave event aan het html element wordt gekoppeld
+// haalt de svg, nav en button op uit de DOM //
 
 closingbutton.addEventListener('click', close)
 openbutton.addEventListener('click', open)
 
-// dit zorgt ervoor dat het mouseleave event door middel van een toggle werkt, dus als de gebruiker van het element af hoverd dan wordt de css class uitgevoerd
+// met een op 1 van de buttons wordt open en close uitgevoerd
+
 
 function close() {
   menu.classList.toggle('closeham')
@@ -85,6 +86,9 @@ function close() {
 function open() {
 	menu.classList.toggle('openham')
 }
+
+// Dit zorgt ervoot dat de css wordt uitgevoerd als er op 1 van de buttons geklikt wordt.
+
 
 
 			/* Schrijf hier eventueel je client-side JavaScript */

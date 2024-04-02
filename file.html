@@ -41,10 +41,27 @@ div{
 
 const inputElement = document.querySelector("input");
 const foto = document.querySelector("div");
+
+// Haalt de input en div op uit de DOM
+
+
 inputElement.addEventListener("change", function(event) {
+
+	// Dit zorgt voor een change op het input attribuut 
+
   const fileUrl = event.target.files[0];
+
+  //Ik begreep dit stukje niet helemaal
+
     const mooi = window.URL.createObjectURL(fileUrl); 
+
+// Dit maakt een objecturl als er een image wordt ingevoegd 
+
+
 	foto.style.setProperty ('--plaatje', `url('${mooi}')`)
+
+	//Hiermee maak je een custom property en geef ik de waarde van mooi mee.
+	// Omdat het custom proberty ook in de div staat komt de foto daar te staan.
 });
 
 
